@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:uxpert_ai/chat_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -39,26 +40,15 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Placeholder for the robot image
-              Icon(
-                Icons.smart_toy_outlined,
-                size: 150,
-                color: themeColor,
+              Lottie.asset(
+                'assets/hello.json'
               ),
               const SizedBox(height: 24),
               Text(
-                'Hello!',
-                style: GoogleFonts.poppins(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Welcome to\nAI Assistant',
+                'Welcome to',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
                 ),
