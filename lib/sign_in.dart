@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uxpert_ai/home_screen.dart';
@@ -24,6 +23,9 @@ class _SignInState extends State<SignIn> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -51,15 +53,11 @@ class _SignInState extends State<SignIn> {
                 const SizedBox(height: 40),
 
                 // --- Email Field ---
-                Text(
-                  'Email',
-                  style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700]),
-                ),
-                const SizedBox(height: 8),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'example@gmail.com',
+                    labelText: 'Email',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -74,14 +72,10 @@ class _SignInState extends State<SignIn> {
                 const SizedBox(height: 20),
 
                 // --- Password Field ---
-                Text(
-                  'Password',
-                  style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700]),
-                ),
-                const SizedBox(height: 8),
                 TextField(
                   obscureText: !_isPasswordVisible,
                   decoration: InputDecoration(
+                    labelText: 'Password',
                     hintText: '********',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),

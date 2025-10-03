@@ -13,6 +13,16 @@ dependencies:
   cupertino_icons: ^1.0.8
   lottie: ^3.1.2
   google_fonts: ^6.2.1
+  flutter_launcher_icons: ^0.14.4
+  http: ^1.5.0
+
+flutter_launcher_icons:
+  image_path_android: "assets/expert_ai_logo.png"
+  image_path_ios: "assets/expert_ai_logo.png"
+  android: true
+  ios: true
+  background_color_ios: "#ffffff"
+  background_color_android: "#ffffff"
 
 dev_dependencies:
   flutter_test:

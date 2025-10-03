@@ -15,6 +15,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        centerTitle: true,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          // Replace this with your actual logo asset
+          child: Image.asset('assets/expert_ai_logo.png', width: 24, height: 24),
+        ),
         title: Text(
           'AI Assistant',
           style: GoogleFonts.poppins(
@@ -32,25 +38,32 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Placeholder for the robot image
               Lottie.asset(
                 'assets/hello.json'
               ),
-              const SizedBox(height: 24),
               Text(
                 'Welcome to',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  fontSize: 20,
+                  fontSize: 15,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
+                ),
+              ),
+              Text(
+                'UXpert AI',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                  fontSize: 65,
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               const SizedBox(height: 8),
@@ -62,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.grey[600],
                 ),
               ),
-              const Spacer(),
+              const SizedBox(height: 60),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -89,21 +102,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: themeColor,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.chat_bubble), label: 'Chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
-          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
       ),
     );
   }
